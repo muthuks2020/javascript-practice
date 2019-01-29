@@ -1,0 +1,54 @@
+<html>
+	<head>
+		<title>date-time-formatter</title>
+	</head>
+	<body>
+		<h1>Date-time-formatter</h1>
+		<label for="date" id="dateTime"></label><br/>
+		<select name=formatType onchange="formatter(this.value)">
+			<option value="format1">dd-mm-yyyy</option>
+			<option value="format2">yyyy-mm-dd</option>
+			<option value="format3">dd/mm/yyyy</option>
+		</select>
+		<input type="submit" name="submit" onclick="formatter()">
+		<label id='output'></label>
+		<script>
+			function formatter(value){
+
+				let today = new Date();
+
+				let dd = today.getDate();
+				let mm = today.getMonth()+1;
+				let yyyy = today.getFullYear();
+				let hours = today.getHours();
+				let min = today.getMinutes();
+				let sec = today.getSeconds();
+
+
+				if(mm < 10) mm = '0' + mm;
+				if(dd < 10) dd = '0' + dd;
+				if(hours < 10) hours = '0' + hours;
+				if(min < 10) min = '0' + min;
+				if(sec < 10) sec = '0' + sec;
+
+				if(value == 'format1')
+				  document.getElementById('output').innerHTML = dd + '-'+ mm + '-' + yyyy + ' '+ hours + ':' + min + ':' + sec;
+				else if(value == 'format2')
+				  document.getElementById('output').innerHTML = yyyy +'-'+ mm + '-' + yyyy + ' '+ hours + ':' + min + ':' + sec;
+				else if(value == 'format3')
+				  document.getElementById('output').innerHTML = dd + '/'+ mm + '/' + yyyy + ' '+ hours + ':' + min + ':' + sec;
+
+			}
+
+			document.getElementById("dateTime").innerHTML = new Date();
+		</script>
+		
+	</body>
+</html>
+
+
+<!--- 
+How can i call the formatter onmouse hover event too
+what should be the default case
+write the script in a separate file
+-->
