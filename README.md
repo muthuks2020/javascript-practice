@@ -1,2 +1,2 @@
 # javascript-practice
-javascript-practice is all about learning and trying out new things in javascript
+javascript-practice is all about learning and trying out the things in javascript
